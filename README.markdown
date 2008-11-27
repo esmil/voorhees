@@ -8,12 +8,12 @@ About
 Voorhees is a yet another [Lua][1] library to parse [JSON][2] documents.
 It is implemented in ANSI C and have no dependencies other than Lua itself.
 
-It is based on the Pushdown Automaton implemented in the [JSON_checker][3]
+It is based on the Pushdown Automaton implemented in the [JSON\_checker][3]
 and is faster than any other JSON parser for Lua that I've found
 (do correct me if I'm wrong).
 
 Also the encoding of the input JSON text is independent from the strings
-it returns. That is, the encoding of the input is autodetected
+it returns. That is, the encoding of the input is auto detected
 whereas you specify the encoding of the strings it returns.
 
 Voorhees also enables you to parse big JSON documents by supplying a
@@ -93,7 +93,7 @@ The generator function
 ----------------------
 
 Instead of passing the whole JSON document in one string to the parser
-it is possible to feed the text piece by piece by suppling a generator
+it is possible to feed the text piece by piece by supplying a generator
 function.
 
 This function is called without arguments whenever the parser needs
@@ -103,7 +103,7 @@ Voorhees does not care how long the strings are as long as they're not empty.
 
 The JSON document is deemed finished when the function returns an
 empty string, `nil` or something else not a string, or raises an error.
-Also the generator function musn't yield.
+Also the generator function mustn't yield.
 
 
 Errors
