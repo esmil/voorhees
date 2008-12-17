@@ -26,8 +26,16 @@
  * Same restrictions apply.
  */
 
+#include <config.h>
 #include <stdlib.h>
-#include <strings.h>
+
+#if !defined WIN32 || defined WIN64
+# include <strings.h>
+#endif
+
+#if defined WIN32 || defined WIN64
+# define strcasecmp _stricmp
+#endif
 
 #define LUA_LIB
 #include <lua.h>

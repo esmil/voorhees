@@ -1,0 +1,16 @@
+CC=cl
+CFLAGS=/O2 /GS- /DLL /LDd
+LDFLAGS=/INCREMENTAL:no /NOLOGO
+
+LUA_DIR=C:\Programmi\Lua\5.1
+LUA_LIBDIR=$(LUA_DIR)\lib
+LUA_SHAREDIR=$(LUA_DIR)\include
+
+all: voorhees.dll
+
+voorhees.dll: voorhees.c 
+    $(CC) $(CFLAGS) voorhees.c win32\voorhees.def $(LUA_LIBDIR)\lua5.1.lib /I$(LUA_SHAREDIR) /I./
+
+test:
+    lua test.lua
+

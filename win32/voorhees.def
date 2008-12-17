@@ -1,0 +1,5 @@
+LIBRARY    voorhees.dll
+
+EXPORTS
+
+luaopen_voorhees
