@@ -2,9 +2,12 @@ CC=cl
 CFLAGS=/O2 /GS- /DLL /LDd
 LDFLAGS=/INCREMENTAL:no /NOLOGO
 
-LUA_DIR=C:\Programmi\Lua\5.1
+PREFIX=C:\Program Files\Lua\5.1
+
+LUA_DIR=$(PREFIX)
 LUA_LIBDIR=$(LUA_DIR)\lib
 LUA_SHAREDIR=$(LUA_DIR)\include
+LUA_CLIBDIR=$(LUA_DIR)\clibs
 
 all: voorhees.dll
 
@@ -14,3 +17,11 @@ voorhees.dll: voorhees.c
 test:
     lua test.lua
 
+install:
+    copy voorhees.dll $(LUA_CLIBDIR)\voorhees.dll
+
+uninstall:
+    del $(LUA_CLIBDIR)\voorhees.dll
+
+clean:
+    del voorhees.dll *.exp *.obj *.lib
