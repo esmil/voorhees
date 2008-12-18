@@ -339,7 +339,7 @@ static int utf8_getchar(lua_State *L, struct input *in)
 }
 
 /*
- * This function reads a little endiad UTF-16 encoded character
+ * This function reads a little endian UTF-16 encoded character
  * from the input
  */
 static int utf16le_getchar(lua_State *L, struct input *in)
@@ -454,7 +454,7 @@ static int utf16be_getchar(lua_State *L, struct input *in)
  */
 static getchar_func detect_encoding(struct input *in)
 {
-	/* Only UTF-8 encoded JSON texsts can be
+	/* Only UTF-8 encoded JSON texts can be
 	 * that short and legal */
 	if (in->len < 4)
 		return utf8_getchar;
@@ -549,7 +549,7 @@ static void utf16le_putchar (struct strbuf *s, int c)
 }
 
 /*
- * This function writes a Unicode code points less than 256
+ * This function writes code points less than 256
  * in plain latin-1 to the string buffer.
  * All other Unicode is mapped to '?'
  */
