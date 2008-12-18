@@ -32,7 +32,7 @@ Installation
 If you have set up [luarocks][4] just type `luarocks make` in the source
 directory.
 
-In a *nix-like environment you can also do
+In a \*nix-like environment you can also do
 
     make
     make PREFIX=/usr install
