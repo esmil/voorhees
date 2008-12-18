@@ -26,16 +26,8 @@
  * Same restrictions apply.
  */
 
-#include <config.h>
 #include <stdlib.h>
-
-#if !defined WIN32 || defined WIN64
-# include <strings.h>
-#endif
-
-#if defined WIN32 || defined WIN64
-# define strcasecmp _stricmp
-#endif
+#include <string.h>
 
 #define LUA_LIB
 #include <lua.h>
@@ -684,12 +676,12 @@ static int l_parse(lua_State *L)
 			return luaL_argerror(L, 2,
 					"encoding must be a string");
 		}
-		if (strcasecmp(str, "utf8") == 0) {
+		if (strcmp(str, "utf8") == 0) {
 			putchar = utf8_putchar;
-		} else if (strcasecmp(str, "utf16") == 0 ||
-				strcasecmp(str, "utf16le") == 0) {
+		} else if (strcmp(str, "utf16") == 0 ||
+				strcmp(str, "utf16le") == 0) {
 			putchar = utf16le_putchar;
-		} else if (strcasecmp(str, "latin1") == 0) {
+		} else if (strcmp(str, "latin1") == 0) {
 			putchar = latin1_putchar;
 		} else {
 			return luaL_error(L,
