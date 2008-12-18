@@ -11,7 +11,7 @@ LUA_CLIBDIR=$(LUA_DIR)\clibs
 
 all: voorhees.dll
 
-voorhees.dll: voorhees.c 
+voorhees.dll: voorhees.c
     $(CC) $(CFLAGS) voorhees.c voorhees.def "$(LUA_LIBDIR)\lua5.1.lib" /I$"(LUA_SHAREDIR)" /I./
 
 test:

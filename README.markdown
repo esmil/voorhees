@@ -40,13 +40,13 @@ In a \*nix-like environment you can also do
 This will install `voorhees.so` in `/usr/lib/lua/5.1`.
 Have a look at the Makefile if this isn't right for your system.
 
-In a Windows environment with Visual Studio installed you first need to set 
+In a Windows environment with Visual Studio installed you first need to set
 the appropriate environment variables using [vsvars32.bat][5] and then
 
     nmake -f Makefile.win PREFIX=C:\Program Files\Lua\5.1
     nmake -f Makefile.win install PREFIX=C:\Program Files\Lua\5.1
 
-This will install `voorhees.dll` in `C:\Program Files\Lua\5.1\clibs` (the 
+This will install `voorhees.dll` in `C:\Program Files\Lua\5.1\clibs` (the
 directory layout reflects the defaults of the [Lua for Windows][6] installer)
 
 [4]: http://www.luarocks.org
